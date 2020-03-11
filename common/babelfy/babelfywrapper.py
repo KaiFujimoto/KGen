@@ -3,7 +3,7 @@ import os
 import urllib.parse
 import urllib.request
 
-from pybabelfy.babelfy import *
+from common.babelfy.babelfy import *
 
 KEY_FILE = 'babelfy.key'
 

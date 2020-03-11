@@ -4,14 +4,14 @@ from argparse import ArgumentParser
 from sys import argv
 from sys import path
 
-from openie import OpenIE
-from srl import SemanticRoleLabeler
+from facts_extractor.openie import OpenIE
+from facts_extractor.srl import SemanticRoleLabeler
 
 class FactsExtractor:
 
     def extract_triples(self, input_filename, openie='stanford', srl=False, depparse=False, verbose=False):
-        if not input_filename.startswith('/'):
-            input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
+        #if not input_filename.startswith('/'):
+        #    input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
         print('Processing text from {} \nPlease wait, as it may take a while ...'.format(input_filename))
 

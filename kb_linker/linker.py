@@ -4,7 +4,7 @@ from argparse import ArgumentParser
 from sys import argv
 from sys import path
 
-from kb import KnowledgeBases
+from kb_linker.kb import KnowledgeBases
 
 path.insert(0, '../')
 from common.stanfordcorenlp.corenlpwrapper import CoreNLPWrapper
@@ -13,8 +13,8 @@ from common.nlputils import NLPUtils
 class Linker:
 
     def link(self, input_filename, k_base='babelfy', umls=False, verbose=False):
-        if not input_filename.startswith('/'):
-            input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
+        #if not input_filename.startswith('/'):
+        #    input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
         print('Processing text from {}'.format(input_filename))
 

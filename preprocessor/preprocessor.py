@@ -4,9 +4,9 @@ from argparse import ArgumentParser
 from sys import argv
 from sys import path
 
-from abbrevresolver import AbbrevResolver
-from corefresolver import CorefResolver
-from simplifier import Simplifier
+from preprocessor.abbrevresolver import AbbrevResolver
+from preprocessor.corefresolver import CorefResolver
+from preprocessor.simplifier import Simplifier
 
 path.insert(0, '../')
 from common.nlputils import NLPUtils
@@ -18,13 +18,14 @@ class Preprocessor:
             input_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + input_filename
 
         print('Processing text from {}'.format(input_filename))
-        with open(input_filename, 'r') as input_file:
+        with open(input_filename, 'r', encoding='utf-8') as input_file:
             contents = input_file.read()
             input_file.close()
 
         coref_resolver = CorefResolver(contents)
         abbrev_resolver = AbbrevResolver(coref_resolver.resolve(verbose))
-        simplified_contents = Simplifier(NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))).simplify(verbose)
+        #simplified_contents = Simplifier(NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))).simplify(verbose)
+        simplified_contents = NLPUtils.adjust_tokens(abbrev_resolver.resolve(verbose))
 
         output_filename = os.path.splitext(input_filename)[0] + '_preprocessed.txt'
         with open(output_filename, 'w') as output_file:

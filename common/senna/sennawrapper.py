@@ -4,7 +4,9 @@ from platform import architecture, system
 from subprocess import Popen
 from sys import stderr
 
-SENNA_DIR = 'senna/'
+SENNA_DIR = os.getenv('SENNA_DIR')
+if SENNA_DIR == None:
+	SENNA_DIR = 'senna/'
 
 TMP_FILENAME = 'senna.tmp'
 TMP_OUT_FILENAME = 'senna.out.tmp'

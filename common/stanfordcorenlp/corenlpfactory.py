@@ -1,4 +1,5 @@
 import glob
+import logging
 
 from os import listdir
 from os.path import abspath, dirname
@@ -11,12 +12,12 @@ class CoreNLPFactory:
     def createCoreNLP():
         server = Server.getServer()
 
-        if not server.isServerStarted():
-            server.startServer()
+        #if not server.isServerStarted():
+        #    server.startServer(verbose=True)
 
         host, port, timeout = Server.getURLParams()
 
-        return StanfordCoreNLP(host, port=port, timeout=timeout)
+        return StanfordCoreNLP(host, port=port, timeout=timeout, logging_level=logging.INFO)
 
     @staticmethod
     def getNERModels():

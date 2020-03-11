@@ -8,8 +8,8 @@ from sys import stderr
 class GraphGenerator:
 
     def generate(self, turtle_filename, verbose=False):
-        if not turtle_filename.startswith('/'):
-            turtle_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + turtle_filename
+        #if not turtle_filename.startswith('/'):
+        #    turtle_filename = os.path.dirname(os.path.realpath(__file__)) + '/' + turtle_filename
 
         print('Processing turtle file: {} '.format(turtle_filename))
         return self.__generate_graph(turtle_filename, verbose)

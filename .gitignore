@@ -1,1 +1,7 @@
 *.pyc
+ENV
+.vscode
+preprocessor/*.txt
+preprocessor/*.csv
+preprocessor/*.ttl
+preprocessor/*.owl

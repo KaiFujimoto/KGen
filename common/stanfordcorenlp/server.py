@@ -65,9 +65,10 @@ class Server:
 
         jars = '{0}/stanford-corenlp.jar:{0}/stanford-corenlp-models.jar:{0}/slf4j-api.jar:{0}/slf4j-simple.jar:{0}/ejml.jar'.format(source_dir)
 
-        command = 'java -D' + TMPDIR_PROP + '="' + TMPDIR + '" -mx5g' + \
-                  ' -cp "' + jars + '" edu.stanford.nlp.pipeline.StanfordCoreNLPServer' + \
-                  ' -port {} -timeout {}'.format(PORT, TIMEOUT)
+        command = 'java -mx5g edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port {} -timeout {}'.format(PORT, TIMEOUT)
+        #command = 'java -D' + TMPDIR_PROP + '="' + TMPDIR + '" -mx5g' + \
+        #          ' -cp "' + jars + '" edu.stanford.nlp.pipeline.StanfordCoreNLPServer' + \
+        #          ' -port {} -timeout {}'.format(PORT, TIMEOUT)
 
         if verbose:
             print('Stanford CoreNLP Server startup command: {}'.format(command))
