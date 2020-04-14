@@ -1,0 +1,130 @@
+@PREFIX	ncit:	<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>	
+@LINK	stored	no_match	not_found	stored	
+@LINK	are	no_match	not_found	are	
+@LINK	infer	synonym	ncit:C75591	Inference	
+@LINK	applied	synonym	ncit:C113519	Apply	
+@LINK	specify	sameas	ncit:C25685	Specify	
+@LINK	created	synonym	ncit:C42620	Creation	
+@LINK	limited	sameas	ncit:C142988	Limited	
+@LINK	generates	no_match	not_found	generates	
+@LINK	delete	synonym	ncit:C61330	Deletion	
+@LINK	want	no_match	not_found	want	
+@LINK	support	sameas	ncit:C37902	Support	
+@LINK	represents	no_match	not_found	represents	
+@LINK	store	synonym	ncit:C133288	Human Cells Tissues and Cellular and Tissue-Based Products Storage	
+@LINK	restore	no_match	not_found	restore	
+@LINK	use	sameas	ncit:C95018	Use	
+@LINK	following	synonym	ncit:C53286	Next	
+@LINK	contain	sameas	ncit:C79873	Contain	
+@LINK	satisfy	no_match	not_found	satisfy	
+@LINK	establish	no_match	not_found	establish	
+@LINK	Floating	synonym	ncit:C124524	Detached	
+@LINK	read	sameas	ncit:C48222	Read	
+@LINK	update	sameas	ncit:C25710	Update	
+@LINK	include	sameas	ncit:C74521	Include	
+@LINK	lost	sameas	ncit:C25560	Lost	
+@LINK	be	no_match	not_found	be	
+@LINK	based	synonym	ncit:C25430	Basis	
+@LINK	manage	no_match	not_found	manage	
+@LINK	execute	synonym	ncit:C48293	Execution	
+@LINK	identify	no_match	not_found	identify	
+@LINK	generate	no_match	not_found	generate	
+@LINK	being	synonym	ncit:C89327	Be	
+@LINK	detect	synonym	ncit:C117041	Dosing Days to Detection	
+@LINK	make	sameas	ncit:C64661	Make	
+@LINK	used	no_match	not_found	used	
+@LINK	using	no_match	not_found	using	
+@LINK	entered	sameas	ncit:C37949	Entered	
+@LINK	is	no_match	not_found	is	
+@LINK	create	synonym	ncit:C42620	Creation	
+@LINK	users that can access which data and in which ways in the database	no_match	not_found	users that can access which data and in which ways in the database	
+@LINK	attributes	no_match	not_found	attributes	
+@LINK	admin	no_match	not_found	admin	
+@LINK	several different types	no_match	not_found	several different types	
+@LINK	databases	no_match	not_found	databases	
+@LINK	time intervals or data	no_match	not_found	time intervals or data	
+@LINK	graphical user interface	no_match	not_found	graphical user interface	
+@LINK	ACID properties -LRB- atomicity consistency isolation durability -RRB-	no_match	not_found	ACID properties -LRB- atomicity consistency isolation durability -RRB-	
+@LINK	Decimal String Binary DateTime Boolean ''	no_match	not_found	Decimal String Binary DateTime Boolean ''	
+@LINK	prototype row	no_match	not_found	prototype row	
+@LINK	prototype row that will be used for every row in the table	no_match	not_found	prototype row that will be used for every row in the table	
+@LINK	databases that contain data	no_match	not_found	databases that contain data	
+@LINK	graphs and charts	no_match	not_found	graphs and charts	
+@LINK	consistency isolation durability	no_match	not_found	consistency isolation durability	
+@LINK	time intervals or data or event triggers	no_match	not_found	time intervals or data or event triggers	
+@LINK	database tables that include graphs and charts	no_match	not_found	database tables that include graphs and charts	
+@LINK	data and in which ways	no_match	not_found	data and in which ways	
+@LINK	row	sameas	ncit:C43378	Row	
+@LINK	tables	no_match	not_found	tables	
+@LINK	Binary	sameas	ncit:C45969	Binary	
+@LINK	type of the data being entered	no_match	not_found	type of the data being entered	
+@LINK	data being entered	no_match	not_found	data being entered	
+@LINK	Floating point	synonym	ncit:C48150	Float	
+@LINK	database with multiple users	no_match	not_found	database with multiple users	
+@LINK	other error	no_match	not_found	other error	
+@LINK	ACID properties	no_match	not_found	ACID properties	
+@LINK	corruption	no_match	not_found	corruption	
+@LINK	known state	no_match	not_found	known state	
+@LINK	event triggers	no_match	not_found	event triggers	
+@LINK	known state using previously created backups	no_match	not_found	known state using previously created backups	
+@LINK	alert	sameas	ncit:C64358	Alert	
+@LINK	links	no_match	not_found	links	
+@LINK	Integer Floating point	no_match	not_found	Integer Floating point	
+@LINK	blob data types	no_match	not_found	blob data types	
+@LINK	String	sameas	ncit:C45253	String	
+@LINK	problem	sameas	ncit:C28020	Problem	
+@LINK	users	synonym	ncit:C42745	System User	
+@LINK	long term storage	no_match	not_found	long term storage	
+@LINK	different data elements	no_match	not_found	different data elements	
+@LINK	data of several different types in long term storage	no_match	not_found	data of several different types in long term storage	
+@LINK	keys	no_match	not_found	keys	
+@LINK	Boolean	sameas	ncit:C45254	Boolean	
+@LINK	changes	no_match	not_found	changes	
+@LINK	backups	no_match	not_found	backups	
+@LINK	table	synonym	ncit:C50371	Table Device	
+@LINK	autoid type	no_match	not_found	autoid type	
+@LINK	types	no_match	not_found	types	
+@LINK	or no changes	no_match	not_found	or no changes	
+@LINK	row in the table	no_match	not_found	row in the table	
+@LINK	entry	sameas	ncit:C43381	Entry	
+@LINK	procedures	synonym	ncit:C154626	Procedure Code	
+@LINK	types Integer Floating point	no_match	not_found	types Integer Floating point	
+@LINK	autoid type that automatically generates a unique value for each new row	no_match	not_found	autoid type that automatically generates a unique value for each new row	
+@LINK	Decimal	no_match	not_found	Decimal	
+@LINK	access which data and in which ways	no_match	not_found	access which data and in which ways	
+@LINK	reports	synonym	ncit:C115575	Clinical Trial Final Report	
+@LINK	there	no_match	not_found	there	
+@LINK	64 TB	no_match	not_found	64 TB	
+@LINK	several different types in long term storage	no_match	not_found	several different types in long term storage	
+@LINK	multiple users	no_match	not_found	multiple users	
+@LINK	unique value	no_match	not_found	unique value	
+@LINK	database tables	no_match	not_found	database tables	
+@LINK	access	sameas	ncit:C25396	Access	
+@LINK	database using SQL commands	no_match	not_found	database using SQL commands	
+@LINK	type	sameas	ncit:C25284	Type	
+@LINK	Integer	sameas	ncit:C45255	Integer	
+@LINK	keys of primary secondary or foreign type	no_match	not_found	keys of primary secondary or foreign type	
+@LINK	database	sameas	ncit:C15426	Database	
+@LINK	following data	no_match	not_found	following data	
+@LINK	specific row or row combinations	no_match	not_found	specific row or row combinations	
+@LINK	corruption or other error	no_match	not_found	corruption or other error	
+@LINK	data corruption	synonym	ncit:C63257	Loss of Data	
+@LINK	unique value for each new row	no_match	not_found	unique value for each new row	
+@LINK	tables where each row represents one data entry	no_match	not_found	tables where each row represents one data entry	
+@LINK	I	no_match	not_found	I	
+@LINK	one data entry	no_match	not_found	one data entry	
+@LINK	DateTime	no_match	not_found	DateTime	
+@LINK	previously created backups	no_match	not_found	previously created backups	
+@LINK	user	sameas	ncit:C164662	User	
+@LINK	8 TB	no_match	not_found	8 TB	
+@LINK	one data	no_match	not_found	one data	
+@LINK	database software	no_match	not_found	database software	
+@LINK	SQL commands	no_match	not_found	SQL commands	
+@LINK	transactions	no_match	not_found	transactions	
+@LINK	associations between different data elements	no_match	not_found	associations between different data elements	
+@LINK	problem due to corruption or other error	no_match	not_found	problem due to corruption or other error	
+@LINK	associations	no_match	not_found	associations	
+@LINK	primary secondary or foreign type	no_match	not_found	primary secondary or foreign type	
+@LINK	data	sameas	ncit:C25474	Data	
+@LINK	atomicity	no_match	not_found	atomicity	
+@LINK	new row	no_match	not_found	new row	

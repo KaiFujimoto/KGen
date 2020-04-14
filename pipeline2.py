@@ -54,32 +54,33 @@ class Pipeline:
         links = links_filename
         rdf_filename = RDFMaker().make(triples, links, verbose)
         assert not rdf_filename is None, 'RDF generation has failed!'
-        # 
-        # png_filename = None
-        # png_filename = GraphGenerator().generate(rdf_filename, verbose)
-        # assert not png_filename is None, 'Graph image generation has failed!'
 
-def main(args):
-    if version_info[0] < 3: # Python version check
-        print('Please run the pipeline using Python 3')
-        exit(1)
+        png_filename = None
+        png_filename = GraphGenerator().generate(rdf_filename, verbose)
+        assert not png_filename is None, 'Graph image generation has failed!'
 
-    arg_p = ArgumentParser('python pipeline.py', description='Generates a KG from an unstructured text.')
-    arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
-    arg_p.add_argument('-np', '--nopreprocess', action='store_true', help='Skips preprocessing')
-    arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
-
-    args = arg_p.parse_args(args[1:])
-    filename = args.filename
-    preprocess = not args.nopreprocess
-    verbose = args.verbose
-
-    if filename is None:
-        print('No file provided.')
-        exit(1)
-
-    pipeline = Pipeline()
-    pipeline.run(filename, preprocess, verbose)
-
-if __name__ == '__main__':
-    exit(main(argv))
+# def main(args):
+#     if version_info[0] < 3: # Python version check
+#         print('Please run the pipeline using Python 3')
+#         exit(1)
+#
+#     arg_p = ArgumentParser('python pipeline.py', description='Generates a KG from an unstructured text.')
+#     arg_p.add_argument('-f', '--filename', type=str, default=None, help='Text file')
+#     arg_p.add_argument('-np', '--nopreprocess', action='store_true', help='Skips preprocessing')
+#     arg_p.add_argument('-v', '--verbose', action='store_true', help='Prints extra information')
+#
+#     args = arg_p.parse_args(args[1:])
+#     filename = args.filename
+#     preprocess = not args.nopreprocess
+#     verbose = args.verbose
+#
+#     if filename is None:
+#         print('No file provided.')
+#         exit(1)
+#
+#     pipeline = Pipeline()
+#     print(filename)
+#     pipeline.run(filename, preprocess, verbose)
+# 
+# if __name__ == '__main__':
+#     exit(main(argv))
