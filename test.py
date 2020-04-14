@@ -60,12 +60,12 @@ filename = "./used_files/offprod_DatabaseSoftware.txt"
 run_kgen(filename)
 
 # folderPath = path of the folder you want to run mvn clean install on
-# with changeDir('/Users/kaifujimoto/Desktop/rdf_lib/my-app'):
-#   subprocess.call(["mvn", "install"])
-#   subprocess.call(["mvn", "exec:java", "-Dexec.mainClass=com.syrdec.app.App", "-Dexec.args=/Users/kaifujimoto/Desktop/KGen/used_files/offprod_DatabaseSoftware_preprocessed_kg.ttl databasesoftwarePLZ.owl"])
-#
-# with changeDir('/Users/kaifujimoto/Desktop/logmap-matcher/target'):
-#     subprocess.call(["java", "-jar", "./logmap-matcher-3.0.jar", "MATCHER", "file:/Users/kaifujimoto/Desktop/rdf_lib/owlfiles/wordprocessing_software.owl", "file:/Users/kaifujimoto/Desktop/rdf_lib/my-app/databasesoftwarePLZ.owl", "TXT", "./output"])
+with changeDir('/Users/kaifujimoto/Desktop/rdf_lib/my-app'):
+  subprocess.call(["mvn", "install"])
+  subprocess.call(["mvn", "exec:java", "-Dexec.mainClass=com.syrdec.app.App", "-Dexec.args=/Users/kaifujimoto/Desktop/KGen/used_files/offprod_DatabaseSoftware_preprocessed_kg.ttl databasesoftwarePLZ.owl"])
+
+with changeDir('/Users/kaifujimoto/Desktop/logmap-matcher/target'):
+    subprocess.call(["java", "-jar", "./logmap-matcher-3.0.jar", "MATCHER", "file:/Users/kaifujimoto/Desktop/rdf_lib/owlfiles/wordprocessing_software.owl", "file:/Users/kaifujimoto/Desktop/rdf_lib/my-app/databasesoftwarePLZ.owl", "TXT", "./output"])
 
 
 # print(owl_api())
