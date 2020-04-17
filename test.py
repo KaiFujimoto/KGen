@@ -21,10 +21,20 @@ if not version_info[0] < 3:
 # n = text_file.write("Welcome to pythonexamples.org edit")
 # text_file.close()
 
+def get_abspath_file(file):
+    #returns the full path of the file in a string
+    directory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+    filename = directory + '/output/' + file
+    print(filename)
 
 def run_kgen(file): #'/Users/kaifujimoto/Desktop/KGen/used_files/offprod_DatabaseSoftware.txt'
     pipeline = Pipeline()
-    pipeline.run(file)
+    directory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+    filename = directory + '/output/' + file
+    print(filename)
+    abs_path_file = os.path.abspath(filename)
+    print(abs_path_file)
+    pipeline.run(abs_path_file)
 
 # #i can give it a direct path to cd into the java folder
 # def compile_java(java_file):
@@ -55,17 +65,50 @@ class changeDir:
   def __exit__(self, etype, value, traceback):
     os.chdir(self.savedPath)
 
-filename = "./used_files/offprod_DatabaseSoftware.txt"
+filename = "output.txt"
 
 run_kgen(filename)
 
-# folderPath = path of the folder you want to run mvn clean install on
-with changeDir('/Users/kaifujimoto/Desktop/rdf_lib/my-app'):
-  subprocess.call(["mvn", "install"])
-  subprocess.call(["mvn", "exec:java", "-Dexec.mainClass=com.syrdec.app.App", "-Dexec.args=/Users/kaifujimoto/Desktop/KGen/used_files/offprod_DatabaseSoftware_preprocessed_kg.ttl databasesoftwarePLZ.owl"])
+def filename_without_ext(filename):
+    return(os.path.splitext(filename)[0])
 
-with changeDir('/Users/kaifujimoto/Desktop/logmap-matcher/target'):
-    subprocess.call(["java", "-jar", "./logmap-matcher-3.0.jar", "MATCHER", "file:/Users/kaifujimoto/Desktop/rdf_lib/owlfiles/wordprocessing_software.owl", "file:/Users/kaifujimoto/Desktop/rdf_lib/my-app/databasesoftwarePLZ.owl", "TXT", "./output"])
+# print(filename_without_ext(filename))
+
+# folderPath = path of the folder you want to run mvn clean install on
+directory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+owlapiPATH = directory + '/ttl_to_owl_converter'
+# print(owlapiPATH)
+with changeDir(owlapiPATH):
+  subprocess.call(["mvn", "install"])
+  directory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+  file = filename_without_ext(filename)
+  filename = directory + '/output/' + file + '_preprocessed_kg.ttl' + ' ' + directory + '/output/output.owl'
+  print(filename)
+  exec_filename = "-Dexec.args=" + filename
+  print(exec_filename)
+  subprocess.call(["mvn", "exec:java", "-Dexec.mainClass=com.syrdec.app.App", exec_filename])
+#"-Dexec.args=/Users/kaifujimoto/Desktop/KGen/used_files/offprod_DatabaseSoftware_preprocessed_kg.ttl databasesoftwarePLZ.owl"
+logmapPATH = directory + "/logmap-matcher/"
+logmaptargetPATH = directory + "/logmap-matcher/target"
+storedOnt = "/temporary_ontologies/wordprocessing_software.owl"
+
+if not logmaptargetPATH:
+    with changeDir(logmapPATH):
+        subprocess.call(["mvn", "install"])
+
+
+outputDir = directory + "/output/"
+# directory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+with changeDir(logmaptargetPATH):
+    print(logmaptargetPATH)
+    first_file = "file:" + directory + storedOnt
+    second_file = "file:" + directory + "/output/output.owl"
+    print(first_file)
+    print(second_file)
+    output_dir = directory + "/output/"
+    subprocess.call(["java", "-jar", "./logmap-matcher-3.0.jar", "MATCHER", first_file, second_file, output_dir, "true"])
+    # subprocess.call(["java", "-jar", "./logmap-matcher-3.0.jar", "MATCHER", "file:/Users/kaifujimoto/Desktop/rad/ui/satire-node-new/externals/temporary_ontologies/wordprocessing_software.owl", "file:/Users/kaifujimoto/Desktop/rad/ui/satire-node-new/externals/output/output.owl", "TXT", "./output"])
+
 
 
 # print(owl_api())
