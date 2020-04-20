@@ -90,7 +90,7 @@ with changeDir(owlapiPATH):
 #"-Dexec.args=/Users/kaifujimoto/Desktop/KGen/used_files/offprod_DatabaseSoftware_preprocessed_kg.ttl databasesoftwarePLZ.owl"
 logmapPATH = directory + "/logmap-matcher/"
 logmaptargetPATH = directory + "/logmap-matcher/target"
-storedOnt = "/temporary_ontologies/wordprocessing_software.owl"
+storedOnt = "/ontologies/wordprocessing_software.owl"
 
 if not logmaptargetPATH:
     with changeDir(logmapPATH):
@@ -99,14 +99,16 @@ if not logmaptargetPATH:
 
 outputDir = directory + "/output/"
 # directory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
-with changeDir(logmaptargetPATH):
+safireDir = os.path.abspath(os.path.join(os.getcwd(), "../.."))
+print(safireDir)
+with changeDir(logmapPATH):
     print(logmaptargetPATH)
-    first_file = "file:" + directory + storedOnt
+    first_file = "file:" + safireDir + storedOnt
     second_file = "file:" + directory + "/output/output.owl"
     print(first_file)
     print(second_file)
     output_dir = directory + "/output/"
-    subprocess.call(["java", "-jar", "./logmap-matcher-3.0.jar", "MATCHER", first_file, second_file, output_dir, "true"])
+    subprocess.call(["java", "-jar", "./target/logmap-matcher-3.0.jar", "MATCHER", first_file, second_file, output_dir, "true"])
     # subprocess.call(["java", "-jar", "./logmap-matcher-3.0.jar", "MATCHER", "file:/Users/kaifujimoto/Desktop/rad/ui/satire-node-new/externals/temporary_ontologies/wordprocessing_software.owl", "file:/Users/kaifujimoto/Desktop/rad/ui/satire-node-new/externals/output/output.owl", "TXT", "./output"])
 
 
